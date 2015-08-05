@@ -5,6 +5,8 @@
  */
 package jpractica1;
 
+import java.awt.Frame;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -85,6 +87,8 @@ public class Jpractica1  {
 //        }while(opcion!=5);
         
         JVentanaInicio miventana = new JVentanaInicio();
+        miventana.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        miventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         miventana.setVisible(true);
     }
     

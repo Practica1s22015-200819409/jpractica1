@@ -5,6 +5,9 @@
  */
 package jpractica1;
 
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JDialog;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -19,24 +22,26 @@ public class JVentanaInicio extends javax.swing.JFrame {
      * Creates new form JVentanaInicio
      */
     public JVentanaInicio() {
-        initComponents();
-        try{
+        try {
+            initComponents();
+            
             
             JVentanaInicio.setDefaultLookAndFeelDecorated(true);
+            
             JDialog.setDefaultLookAndFeelDecorated(true);
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             pantalla1 primerapantalla = new pantalla1();
             primerapantalla.setVisible(true);
+//            try {
+//                primerapantalla.setMaximum(true);
+//            } catch (PropertyVetoException ex) {
+//                Logger.getLogger(JVentanaInicio.class.getName()).log(Level.SEVERE, null, ex);
+//            }
             this.add(primerapantalla);
             this.show();
-        }catch(ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e){}
-            
-//        }
-//        try{
-//            
-//        }catch(PropertyVetoExcepcion ex){
-//            Logger.getLogger(null, null)
-//        }
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(JVentanaInicio.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
