@@ -5,6 +5,7 @@
  */
 package jpractica1;
 
+import javax.swing.Icon;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,21 +22,21 @@ public class JListaDoble{
         return inicio==null;
     }
     //se agrega al fin
-    public void insertarFin(String nomb){
+    public void insertarFin(String nomb,Icon icon){
         if(!listavacia()){
-            fin  = new Jnodo(nomb, null, fin);
+            fin  = new Jnodo(nomb, null, fin,icon);
             fin.anterior.siguiente = fin;
         }else{
-            inicio=fin=new Jnodo(nomb);
+            inicio=fin=new Jnodo(nomb,icon);
         }
     }
     //se agrega al inicio
-    public void insertarInicio(String nomb){
+    public void insertarInicio(String nomb,Icon icon){
         if(!listavacia()){
-            inicio  = new Jnodo(nomb, inicio, null);
+            inicio  = new Jnodo(nomb, inicio, null,icon);
             inicio.siguiente.anterior = inicio;
         }else{
-            inicio=fin=new Jnodo(nomb);
+            inicio=fin=new Jnodo(nomb,icon);
         }
     }
     
@@ -45,6 +46,15 @@ public class JListaDoble{
             
         }
     }
+    
+    public Jnodo getInicio(){
+        return inicio;
+    }
+    
+    public Jnodo getFinal(){
+        return fin;
+    }
+    
     public void mostrarInicio(){
         if(!listavacia()){
             String impri="";

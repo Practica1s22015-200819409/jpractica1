@@ -5,7 +5,6 @@
  */
 package jpractica1;
 
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,6 +13,7 @@ import javax.swing.JOptionPane;
 public class pantalla1 extends javax.swing.JInternalFrame {
 
     JListaDoble milista = new JListaDoble();
+    
     
     /**
      * Creates new form pantalla1
@@ -28,15 +28,62 @@ public class pantalla1 extends javax.swing.JInternalFrame {
 //        JOptionPane.showInputDialog(null,evt.toString(),"Error", 
 //                                                JOptionPane.INFORMATION_MESSAGE);
         if(evt.getSource().equals(Bmario)){
-            salidaTexto.setText("mario");
+            if(txtmario.getText()==null){
+                milista.insertarInicio("mario", lmario.getIcon());
+            }else{
+                milista.insertarInicio(txtmario.getText(), lmario.getIcon());
+            }
+            Bmario.setEnabled(false);
+            salidaTexto.setText("mario");            
+        }else if(evt.getSource().equals(Bsuelo)){
+            if(txtsuelo.getText()==null){
+                milista.insertarInicio("suelo", lsuelo.getIcon());
+            }else{
+                milista.insertarInicio(txtsuelo.getText(), lsuelo.getIcon());
+            }
+            salidaTexto.setText("suelo");
         }else if(evt.getSource().equals(Bpared)){
+            if(txtpared.getText()==null){
+                milista.insertarInicio("pared", lpared.getIcon());
+            }else{
+                milista.insertarInicio(txtpared.getText(), lpared.getIcon());
+            }
             salidaTexto.setText("pared");
-        }else if(evt.getSource().equals(Bficha)){
-            salidaTexto.setText("ficha");
         }else if(evt.getSource().equals(Bonguito)){
+            if(txtonguito.getText()==null){
+                milista.insertarInicio("onguito", longuito.getIcon());
+            }else{
+                milista.insertarInicio(txtonguito.getText(), longuito.getIcon());
+            }
             salidaTexto.setText("onguito");
-        }else if(evt.getSource().equals(botonprueba)){
-            salidaTexto.setText("prueba");
+        }else if(evt.getSource().equals(Bkoopa)){
+            if(txtkoopa.getText()==null){
+                milista.insertarInicio("koopa", lkoopa.getIcon());
+            }else{
+                milista.insertarInicio(txtkoopa.getText(), lkoopa.getIcon());
+            }
+            salidaTexto.setText("koopa");
+        }else if(evt.getSource().equals(Bficha)){
+            if(txtficha.getText()==null){
+                milista.insertarInicio("ficha", lficha.getIcon());
+            }else{
+                milista.insertarInicio(txtficha.getText(), lficha.getIcon());
+            }
+            salidaTexto.setText("ficha");
+        }else if(evt.getSource().equals(Bcastillo)){
+            if(txtcastillo.getText()==null){
+                milista.insertarInicio("castillo", lcastillo.getIcon());
+            }else{
+                milista.insertarInicio(txtcastillo.getText(), lcastillo.getIcon());
+            }
+            salidaTexto.setText("castillo");
+        }else if(evt.getSource().equals(Bgoomba)){
+            if(txtgoomba.getText()==null){
+                milista.insertarInicio("goomba", lgoomba.getIcon());
+            }else{
+                milista.insertarInicio(txtgoomba.getText(), lgoomba.getIcon());
+            }
+            salidaTexto.setText("goomba");
         }
     }
     /**
@@ -49,59 +96,85 @@ public class pantalla1 extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         gruporadio = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        Bpared = new javax.swing.JButton();
+        lsuelo = new javax.swing.JLabel();
+        longuito = new javax.swing.JLabel();
+        lgoomba = new javax.swing.JLabel();
+        lpared = new javax.swing.JLabel();
+        lmario = new javax.swing.JLabel();
+        lficha = new javax.swing.JLabel();
+        lkoopa = new javax.swing.JLabel();
+        Bsuelo = new javax.swing.JButton();
         Bmario = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        Bgoomba = new javax.swing.JButton();
+        Bkoopa = new javax.swing.JButton();
         Bonguito = new javax.swing.JButton();
+        Bpared = new javax.swing.JButton();
         Bficha = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jButton15 = new javax.swing.JButton();
-        jTextField14 = new javax.swing.JTextField();
+        txtsuelo = new javax.swing.JTextField();
+        txtmario = new javax.swing.JTextField();
+        txtgoomba = new javax.swing.JTextField();
+        txtkoopa = new javax.swing.JTextField();
+        txtonguito = new javax.swing.JTextField();
+        txtpared = new javax.swing.JTextField();
+        txtficha = new javax.swing.JTextField();
+        lcastillo = new javax.swing.JLabel();
+        Bcastillo = new javax.swing.JButton();
+        txtcastillo = new javax.swing.JTextField();
         jradiopila = new javax.swing.JRadioButton();
         jradiocola = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         salidaTexto = new javax.swing.JTextArea();
-        botonprueba = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
+        setMaximizable(true);
         setTitle("Agregar Objetos a lista doblemente enlazada");
+        getContentPane().setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jpractica1/camino}.jpg"))); // NOI18N
+        lsuelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jpractica1/suelo.png"))); // NOI18N
+        getContentPane().add(lsuelo);
+        lsuelo.setBounds(20, 20, 109, 99);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jpractica1/ongo.jpg"))); // NOI18N
+        longuito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jpractica1/onguito.png"))); // NOI18N
+        getContentPane().add(longuito);
+        longuito.setBounds(360, 19, 109, 110);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jpractica1/caño.jpg"))); // NOI18N
+        lgoomba.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jpractica1/goombaisz.png"))); // NOI18N
+        getContentPane().add(lgoomba);
+        lgoomba.setBounds(730, 20, 111, 99);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jpractica1/pared.jpg"))); // NOI18N
+        lpared.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jpractica1/pared.png"))); // NOI18N
+        getContentPane().add(lpared);
+        lpared.setBounds(370, 180, 109, 99);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jpractica1/trosl.jpg"))); // NOI18N
+        lmario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jpractica1/mariobross.png"))); // NOI18N
+        getContentPane().add(lmario);
+        lmario.setBounds(20, 180, 109, 100);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jpractica1/trofeo}.jpg"))); // NOI18N
+        lficha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jpractica1/moneda.png"))); // NOI18N
+        getContentPane().add(lficha);
+        lficha.setBounds(1050, 20, 109, 100);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jpractica1/muro.jpg"))); // NOI18N
+        lkoopa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jpractica1/koopa.png"))); // NOI18N
+        getContentPane().add(lkoopa);
+        lkoopa.setBounds(730, 190, 111, 99);
 
-        Bpared.setText("Agregar Objeto");
-        Bpared.setName(""); // NOI18N
-        Bpared.addActionListener(new java.awt.event.ActionListener() {
+        Bsuelo.setText("Agregar Objeto");
+        Bsuelo.setName(""); // NOI18N
+        Bsuelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BparedActionPerformed(evt);
+                BsueloActionPerformed(evt);
             }
         });
+        getContentPane().add(Bsuelo);
+        Bsuelo.setBounds(160, 20, 107, 23);
 
         Bmario.setText("Agregar Objeto");
         Bmario.addActionListener(new java.awt.event.ActionListener() {
@@ -109,10 +182,26 @@ public class pantalla1 extends javax.swing.JInternalFrame {
                 BmarioActionPerformed(evt);
             }
         });
+        getContentPane().add(Bmario);
+        Bmario.setBounds(170, 180, 107, 23);
 
-        jButton5.setText("Agregar Objeto");
+        Bgoomba.setText("Agregar Objeto");
+        Bgoomba.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BgoombaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Bgoomba);
+        Bgoomba.setBounds(880, 20, 107, 23);
 
-        jButton8.setText("Agregar Objeto");
+        Bkoopa.setText("Agregar Objeto");
+        Bkoopa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BkoopaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Bkoopa);
+        Bkoopa.setBounds(880, 190, 107, 23);
 
         Bonguito.setText("Agregar Objeto");
         Bonguito.addActionListener(new java.awt.event.ActionListener() {
@@ -120,6 +209,17 @@ public class pantalla1 extends javax.swing.JInternalFrame {
                 BonguitoActionPerformed(evt);
             }
         });
+        getContentPane().add(Bonguito);
+        Bonguito.setBounds(510, 20, 107, 23);
+
+        Bpared.setText("Agregar Objeto");
+        Bpared.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BparedActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Bpared);
+        Bpared.setBounds(520, 180, 107, 23);
 
         Bficha.setText("Agregar Objeto");
         Bficha.addActionListener(new java.awt.event.ActionListener() {
@@ -127,251 +227,202 @@ public class pantalla1 extends javax.swing.JInternalFrame {
                 BfichaActionPerformed(evt);
             }
         });
+        getContentPane().add(Bficha);
+        Bficha.setBounds(1200, 20, 107, 23);
+        getContentPane().add(txtsuelo);
+        txtsuelo.setBounds(160, 100, 106, 20);
+        getContentPane().add(txtmario);
+        txtmario.setBounds(170, 260, 106, 20);
+        getContentPane().add(txtgoomba);
+        txtgoomba.setBounds(880, 100, 106, 20);
+        getContentPane().add(txtkoopa);
+        txtkoopa.setBounds(880, 270, 106, 20);
+        getContentPane().add(txtonguito);
+        txtonguito.setBounds(510, 100, 106, 20);
+        getContentPane().add(txtpared);
+        txtpared.setBounds(520, 260, 106, 20);
+        getContentPane().add(txtficha);
+        txtficha.setBounds(1200, 100, 106, 20);
 
-        jButton14.setText("Agregar Objeto");
+        lcastillo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jpractica1/castillo.png"))); // NOI18N
+        getContentPane().add(lcastillo);
+        lcastillo.setBounds(1050, 190, 109, 95);
 
-        jTextField2.setText("nombre personaje");
-
-        jTextField8.setText("nombre personaje");
-
-        jTextField9.setText("nombre personaje");
-
-        jTextField10.setText("nombre personaje");
-
-        jTextField11.setText("nombre personaje");
-
-        jTextField12.setText("nombre personaje");
-
-        jTextField13.setText("nombre personaje");
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jpractica1/trofeo}.jpg"))); // NOI18N
-
-        jButton15.setText("Agregar Objeto");
-
-        jTextField14.setText("nombre personaje");
+        Bcastillo.setText("Agregar Objeto");
+        Bcastillo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BcastilloActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Bcastillo);
+        Bcastillo.setBounds(1200, 190, 107, 23);
+        getContentPane().add(txtcastillo);
+        txtcastillo.setBounds(1200, 270, 106, 20);
 
         jradiopila.setText("Pila");
+        getContentPane().add(jradiopila);
+        jradiopila.setBounds(750, 350, 41, 23);
 
         jradiocola.setText("cola");
+        getContentPane().add(jradiocola);
+        jradiocola.setBounds(830, 350, 45, 23);
 
         salidaTexto.setColumns(20);
         salidaTexto.setRows(5);
         jScrollPane1.setViewportView(salidaTexto);
 
-        botonprueba.setActionCommand("aceptar");
-        botonprueba.setLabel("no se");
-        botonprueba.setName("hola"); // NOI18N
-        botonprueba.addActionListener(new java.awt.event.ActionListener() {
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(60, 350, 525, 32);
+
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Nombre del Objeto");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(160, 80, 106, 14);
+
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Nombre del Objeto");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(170, 240, 106, 14);
+
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Nombre del Objeto");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(510, 80, 106, 14);
+
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Nombre del Objeto");
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(520, 240, 106, 14);
+
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("Nombre del Objeto");
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(880, 70, 106, 14);
+
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Nombre del Objeto");
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(880, 240, 106, 14);
+
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("Nombre del Objeto");
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(1200, 70, 106, 14);
+
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("Nombre del Objeto");
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(1200, 240, 106, 14);
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonpruebaActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jradiopila)
-                        .addGap(146, 146, 146)
-                        .addComponent(jradiocola))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(botonprueba)))
-                .addGap(543, 543, 543))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel1))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Bpared, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2))
-                    .addComponent(Bmario, javax.swing.GroupLayout.Alignment.LEADING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Bficha)
-                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Bonguito, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addGap(67, 67, 67)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel8))
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton5))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton8))
-                        .addGap(2, 2, 2)))
-                .addGap(69, 69, 69)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton14)
-                            .addComponent(jTextField13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jButton15)
-                                .addComponent(jTextField14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Bpared)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton14)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel3)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton5)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Bonguito)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel2))
-                .addGap(63, 63, 63)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Bmario)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton15)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel7)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton8)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel8)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Bficha)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel4))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jradiocola)
-                            .addComponent(jradiopila))
-                        .addGap(47, 47, 47)
-                        .addComponent(botonprueba)
-                        .addGap(141, 141, 141))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jScrollPane1))))
-        );
+        getContentPane().add(jButton1);
+        jButton1.setBounds(630, 350, 73, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BparedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BparedActionPerformed
+    private void BsueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BsueloActionPerformed
         // TODO add your handling code here:
         opciones(evt);
-    }//GEN-LAST:event_BparedActionPerformed
+    }//GEN-LAST:event_BsueloActionPerformed
 
     private void BonguitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BonguitoActionPerformed
         // TODO add your handling code here
         opciones(evt);
     }//GEN-LAST:event_BonguitoActionPerformed
 
-    private void BfichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BfichaActionPerformed
+    private void BparedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BparedActionPerformed
         // TODO add your handling code here:
         opciones(evt);
-    }//GEN-LAST:event_BfichaActionPerformed
+    }//GEN-LAST:event_BparedActionPerformed
 
     private void BmarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BmarioActionPerformed
         // TODO add your handling code here:
         opciones(evt);
     }//GEN-LAST:event_BmarioActionPerformed
 
-    private void botonpruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonpruebaActionPerformed
+    private void BcastilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcastilloActionPerformed
         // TODO add your handling code here:
         opciones(evt);
-    }//GEN-LAST:event_botonpruebaActionPerformed
+    }//GEN-LAST:event_BcastilloActionPerformed
+
+    private void BkoopaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BkoopaActionPerformed
+        // TODO add your handling code here:
+        opciones(evt);
+    }//GEN-LAST:event_BkoopaActionPerformed
+
+    private void BgoombaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BgoombaActionPerformed
+        // TODO add your handling code here:
+        opciones(evt);
+    }//GEN-LAST:event_BgoombaActionPerformed
+
+    private void BfichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BfichaActionPerformed
+        // TODO add your handling code here:
+        opciones(evt);
+    }//GEN-LAST:event_BfichaActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        int posx, posy;
+        posx = 20;
+        posy = 10;
+        Jnodo aux = milista.getFinal();
+        
+        while(aux!=null){
+            aux.setLocation(posx, posy);
+            this.getContentPane().add(aux);
+            aux = aux.siguiente;
+            posx+=109;
+            
+            this.getContentPane().repaint();
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Bcastillo;
     private javax.swing.JButton Bficha;
+    private javax.swing.JButton Bgoomba;
+    private javax.swing.JButton Bkoopa;
     private javax.swing.JButton Bmario;
     private javax.swing.JButton Bonguito;
     private javax.swing.JButton Bpared;
-    private javax.swing.JButton botonprueba;
+    private javax.swing.JButton Bsuelo;
     private javax.swing.ButtonGroup gruporadio;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JRadioButton jradiocola;
     private javax.swing.JRadioButton jradiopila;
+    private javax.swing.JLabel lcastillo;
+    private javax.swing.JLabel lficha;
+    private javax.swing.JLabel lgoomba;
+    private javax.swing.JLabel lkoopa;
+    private javax.swing.JLabel lmario;
+    private javax.swing.JLabel longuito;
+    private javax.swing.JLabel lpared;
+    private javax.swing.JLabel lsuelo;
     private javax.swing.JTextArea salidaTexto;
+    private javax.swing.JTextField txtcastillo;
+    private javax.swing.JTextField txtficha;
+    private javax.swing.JTextField txtgoomba;
+    private javax.swing.JTextField txtkoopa;
+    private javax.swing.JTextField txtmario;
+    private javax.swing.JTextField txtonguito;
+    private javax.swing.JTextField txtpared;
+    private javax.swing.JTextField txtsuelo;
     // End of variables declaration//GEN-END:variables
 }

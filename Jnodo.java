@@ -5,6 +5,7 @@
  */
 package jpractica1;
 
+import javax.swing.Icon;
 import javax.swing.JLabel;
 
 /**
@@ -15,11 +16,12 @@ public class Jnodo extends JLabel{
     public String nombre;
     Jnodo siguiente,anterior;
     
-    public Jnodo(String nomb){
-        this(nomb,null,null);
+    public Jnodo(String nomb,Icon icon){
+        this(nomb,null,null,icon);
     }
     
-    public Jnodo(String nombre, Jnodo sig,Jnodo ant){
+    public Jnodo(String nombre, Jnodo sig,Jnodo ant,Icon icon){
+        this.setIcon(icon);
         this.nombre = nombre;
         this.siguiente = sig;
         this.anterior = ant;
